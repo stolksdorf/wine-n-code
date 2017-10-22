@@ -1,2 +1,4 @@
 # wine-n-code
-Collection of info about Wine &amp; Code Night
+Collection of info about Wine & Code Nights
+
+
