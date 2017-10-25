@@ -98,7 +98,7 @@ Arrays can be added to `friends.push('erin')`, referenced by 'index' `friends[0]
 var totalScore = scores[0] + scores[1] + scores[2] + scores[3];
 ```
 
-##### Objects (maps)
+##### Objects (dictionaries)
 ```js
 var song = {
     title : 'Shake It Off',
