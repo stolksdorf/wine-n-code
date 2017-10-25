@@ -27,7 +27,7 @@ a = 7;
 var helloMessage = 'Why hello there';
 ```
 
-The format is `var [name of variable] = [value]`. There are two main types of variables: 'atomic' and 'collection' types.
+The format is `var [name of variable] = [value]`. You can change what's stored in the bucket as many times as you like. There are two main types of variables: 'atomic' and 'collection' types.
 
 
 ### Atomic Types
@@ -117,7 +117,7 @@ Objects are a way of storing information that's named, but have no order. Instea
 song.playCount = song.playCount + 1;
 ```
 
-### Putting it together: Nesting Collections
+### Bonus! Nesting Collections
 So collections variables can group values together, however you may have noticed that collections _themselves_ are values, meaning we can put collections within collections! Let's try replicate our examples from the intro.
 
 ```js
@@ -125,11 +125,13 @@ var students = [
     {
         id : 12768795,
         name : 'Scott Tolksdorf',
+        email : 'scott.tolksdorf@gmail.com',
         avg : 85.3
     },
     {
         id : 12748305,
         name : 'Katie McCann',
+        email : 'kt.da.realest@coolgirlz.biz',
         avg : 97.4
     }
 ];
@@ -150,21 +152,92 @@ Figuring out how to represent your data in programming is very difficult and you
 
 
 ### Functions
+Functions are stored chunks of code that can be run. Functions take inputs (aka parameters or arguments), and they return a value. Functions can also be stored into variables.
 
-_To be continued..._
+```js
+var sum = (numberOne, numberTwo)=>{
+    var result = numberOne + numberTwo;
+    return result;
+}
 
+var seven = sum(3, 4);
+```
+
+In this example we have a function that takes two inputs, adds them together, and then returns the result. We can now use this `sum` function many times throughout our project!
+
+Functions are incredibly powerful and the cornerstone of programming. A good analogy for them is recipe cards. Every recipe has a list of ingredients (inputs), series of steps (the code in the function), and a delicious result (the return value).
+
+
+### Bonus! Nesting Functions
+Functions get real powerful when you call other functions from inside them.
+
+_to be continued..._
 
 
 
 
 
 ## Data Flow
+Now that we know how to structure our data, we now want to actually _do things_ with it. The following concepts take data and change it or come to conclusions about it in some way.
 
 #### Conditionals
 
+
 #### Map
+Given a collection of values and a function, `map` will "apply" that function to each value, and return a new collection with those results, _whew_. Let's see it in action.
+
+```js
+var double = (number)=>{
+    return number * 2;
+};
+
+var numbers = [1,2,3,4];
+
+var doubledNumbers = numbers.map(double);
+```
+
+What's happening here is that map is looking at each value in the array, eg. `2`, taking it and putting it through the `double` function. Taking the result (`4`), and adding it to a brand new array. When it's done, it will return back the new array.
+
+```
+   List      double(n)       Result
+[
+    1  -->   double(1)   -->  2
+    2  -->   double(2)   -->  4
+    3  -->   double(3)   -->  6
+    4  -->   double(4)   -->  8
+]
+```
+
+Map is useful when the result you want is always the same size as the starting list. So it's great if given a list of student information you just want everyone's first name, but it wouldn't be useful for getting your favourite songs from a list.
+
+```js
+var listOfStudents = [
+    {
+        id : 12768795,
+        name : 'Scott Tolksdorf',
+        email : 'scott.tolksdorf@gmail.com',
+        avg : 85.3
+    },
+    {
+        id : 12748305,
+        name : 'Katie McCann',
+        email : 'kt.da.realest@coolgirlz.biz',
+        avg : 97.4
+    }
+];
+
+var getStudentEmails = (students)=>{
+    var getEmailFromStudent = (student)=>{
+        return student.email;
+    }
+    return students.map(getEmailFromStudent)
+};
+
+var studentEmails = getStudentEmails(listOfStudents);
+```
 
 #### Reduce
+
 
 #### Sort
 
