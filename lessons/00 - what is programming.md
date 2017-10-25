@@ -194,6 +194,8 @@ var double = (number)=>{
 var numbers = [1,2,3,4];
 
 var doubledNumbers = numbers.map(double);
+
+// doubledNumbers is now [2,4,6,8]
 ```
 
 What's happening here is that map is looking at each value in the array, eg. `2`, taking it and putting it through the `double` function. Taking the result (`4`), and adding it to a brand new array. When it's done, it will return back the new array.
@@ -208,7 +210,7 @@ What's happening here is that map is looking at each value in the array, eg. `2`
 ]
 ```
 
-Map is useful when the result you want is always the same size as the starting list. So it's great if given a list of student information you just want everyone's first name, but it wouldn't be useful for getting your favourite songs from a list.
+Map is useful when the result you want is always the same size as the starting list. So it's great if given a list of student information you just want everyone's email, but it wouldn't be useful for getting your favourite songs from a list.
 
 ```js
 var listOfStudents = [
