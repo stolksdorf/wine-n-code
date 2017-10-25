@@ -1,6 +1,6 @@
 # What is Programming
 
-For this session we are going to start with the basics. I want to get a base foundation of thinking and teerminology that we can build on. If this isn't new to you, you can read ahead and blitz through, maybe help out someone that is having a hard time. If this isn't new to you, you don't have to 'get' everything immediately. This shit is hard, it's like learning a brand new lanugage, it takes time and practice. In future session we'll be exploring more advanced topics, and you'll be directing what we cover.
+For this session we are going to start with the basics. I want to get a base foundation of thinking and terminology that we can build on. If this isn't new to you, you can read ahead and blitz through, maybe help out someone that is having a hard time. If this isn't new to you, you don't have to 'get' everything immediately. This shit is hard, it's like learning a brand new lanugage, it takes time and practice. In future session we'll be exploring more advanced topics, and you'll be directing what we cover.
 
 
 Programming or writing code, is simply writing out instructions for a machine to follow. A really great analogy for getting your head around it is to think of programming like writing out cooking recipes. Each recipe has a series of ingredients, detailed list of steps, and produces a delicious outcome.
@@ -78,10 +78,10 @@ This just represents 'nothing'. Used for when a variable has been deleted or nev
 
 
 
-## Collections
+### Collections
 Collections _collect_ multiple values into a group. They come in two flavours:
 
-### Arrays (lists)
+##### Arrays (lists)
 ```js
 var scores = [34, 17, 67, 56];
 
@@ -94,23 +94,23 @@ Arrays are a _list_ of values where order is important or the values can't be na
 Arrays can be added to `friends.push('erin')`, referenced by 'index' `friends[0]`, get the size of `friends.length`.
 
 ```js
-//For example: Calcualting the total score
+//For example: Calculating the total score
 var totalScore = scores[0] + scores[1] + scores[2] + scores[3];
 ```
 
-### Objects (maps)
+##### Objects (maps)
 ```js
 var song = {
-	title : 'Shake It Off',
-	artist : 'TayTay Swifty',
-	length : 242,
-	playCount : 2307,
-	isFav : true
+    title : 'Shake It Off',
+    artist : 'TayTay Swifty',
+    duration : 242,
+    playCount : 2307,
+    isFav : true
 };
 
-var numMinutes = song.length / 60;
+var numMinutes = song.duration / 60;
 ```
-Objects are a way of storing information that's named. INstead of accessing that value by using an index, we use it's name.
+Objects are a way of storing information that's named, but have no order. Instead of accessing that value by using an index, we use it's name. This is used for storing _properties_ about a concept, like a user or a song.
 
 ```js
 //Increment the playcount
@@ -122,26 +122,26 @@ So collections variables can group values together, however you may have noticed
 
 ```js
 var students = [
-	{
-		id : 12768795,
-		name : 'Scott Tolksdorf',
-		avg : 85.3
-	},
-	{
-		id : 12748305,
-		name : 'Katie McCann',
-		avg : 97.4
-	}
+    {
+        id : 12768795,
+        name : 'Scott Tolksdorf',
+        avg : 85.3
+    },
+    {
+        id : 12748305,
+        name : 'Katie McCann',
+        avg : 97.4
+    }
 ];
 
 var secretSanta = {
-	rebecca : {
-		friends : ['scott', 'katie'],
-		spouse : 'dave',
-		matchedWithLastYear : 'simon',
-		enemies : []
-	},
-	//...
+    rebecca : {
+        friends : ['scott', 'katie'],
+        spouse : 'dave',
+        matchedWithLastYear : 'simon',
+        enemies : []
+    },
+    //...
 };
 secretSanta.rebecca.friends[1]; //'katie'
 ```
@@ -149,13 +149,23 @@ secretSanta.rebecca.friends[1]; //'katie'
 Figuring out how to represent your data in progrmaming is very difficult and you may not get it right the first time. Sometimes it changes depending on what you are doing with that data.
 
 
+### Functions
+
+_To be continued..._
 
 
 
 
-## Functions
 
 
-## Flow Control
+## Data Flow
 
-Conditionals, Map, Reduce, Sort
+#### Conditionals
+
+#### Map
+
+#### Reduce
+
+#### Sort
+
+### Examples

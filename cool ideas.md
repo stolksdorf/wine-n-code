@@ -1,4 +1,5 @@
 # Cool Ideas
+Here are some topics we could do lessons on
 
 ### Hands On
 - How to make a video game
@@ -8,6 +9,7 @@
 - Automation and optimization
 - Making a website
 - Monte Carlo Simulations and solving real-world problems
+- Git and Source Control
 
 ### Theory
 - Crytocurrencies
