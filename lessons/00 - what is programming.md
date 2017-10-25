@@ -1,23 +1,23 @@
 # What is Programming
 
-For this session we are going to start with the basics. I want to get a base foundation of thinking and terminology that we can build on. If this isn't new to you, you can read ahead and blitz through, maybe help out someone that is having a hard time. If this isn't new to you, you don't have to 'get' everything immediately. This shit is hard, it's like learning a brand new lanugage, it takes time and practice. In future session we'll be exploring more advanced topics, and you'll be directing what we cover.
+For this session we are going to start with the basics. I want to get a base foundation of thinking and terminology that we can build on. If this isn't new to you, you can read ahead and blitz through, maybe help out someone that is having a hard time. If this is new to you, you don't have to 'get' everything immediately. This shit is hard, it's like learning a brand new language, it takes time and practice. In future session we'll be exploring more advanced topics, and you'll be directing what we cover.
 
 
 Programming or writing code, is simply writing out instructions for a machine to follow. A really great analogy for getting your head around it is to think of programming like writing out cooking recipes. Each recipe has a series of ingredients, detailed list of steps, and produces a delicious outcome.
 
-Programing is all about Data and the Flow of that Data.
+Programming is all about Data and the Flow of that Data.
 
 *Data* are things like, a list of students in a class with names, ids, and averages or a list of your favourite songs and information about them, or a list of all of your friends and how they should be paired for a secret santa.
 
 *Flow* is taking that data and doing things like, getting the student ids for the top three students in class, or making a playlist that's exactly 50min for a run, or finding the optimal pairings of people for a secret santa so everyone is happy.
 
 
-First we'll learn how to structure that data
+First we'll learn how to structure that data.
 
 
 
 ## Variables
-Variables are ways to store-named values. Think of them like a bucket with a name-tag on them. They are defined like so:
+Variables are ways to store named values. Think of them like a bucket with a name-tag on them. They are defined like so:
 
 ```js
 var a = 6;
@@ -60,7 +60,7 @@ var isInactive = true;
 var hasPermission = false;
 var isAdmin = false;
 
-var canVote = (!isActive && hasPermission) || isAdmin;
+var canVote = (!isInactive && hasPermission) || isAdmin;
 
 if(canVote == true) vote();
 ```
@@ -110,7 +110,7 @@ var song = {
 
 var numMinutes = song.duration / 60;
 ```
-Objects are a way of storing information that's named, but have no order. Instead of accessing that value by using an index, we use it's name. This is used for storing _properties_ about a concept, like a user or a song.
+Objects are a way of storing information that's named, but have no order. Instead of accessing that value by using an index, we use its name. This is used for storing _properties_ about a concept, like a user or a song.
 
 ```js
 //Increment the playcount
@@ -146,7 +146,7 @@ var secretSanta = {
 secretSanta.rebecca.friends[1]; //'katie'
 ```
 
-Figuring out how to represent your data in progrmaming is very difficult and you may not get it right the first time. Sometimes it changes depending on what you are doing with that data.
+Figuring out how to represent your data in programming is very difficult and you may not get it right the first time. Sometimes it changes depending on what you are doing with that data.
 
 
 ### Functions
