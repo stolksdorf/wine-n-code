@@ -2,17 +2,10 @@ const _ = require('lodash');
 const glob = require('glob');
 const Slack = require('pico-slack');
 
-
-const config = require('nconf')
-	.argv()
-	.env({lowerCase: true})
-	.file('environment', {file: `config/${process.env.NODE_ENV}.json`})
-	.file('defaults', {file: 'config/default.json'});
-
+const slackBotToken = process.env.slack_bot_token || require('./local.json').slack_bot_token;
 
 
 Slack.setInfo('wadsworth', ':tophat:');
-
 
 
 const loadBots = ()=>{
@@ -27,7 +20,7 @@ const loadBots = ()=>{
 	});
 }
 
-Slack.connect(config.get('slack_bot_token'))
+Slack.connect(slackBotToken)
 	.then(()=>loadBots())
 	.then(()=>Slack.debug('Rebooted!'))
 	.catch((err)=>Slack.error(err));
