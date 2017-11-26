@@ -7,9 +7,9 @@ Programming or writing code, is simply writing out instructions for a machine to
 
 Programming is all about Data and the Flow of that Data.
 
-*Data* are things like, a list of students in a class with names, ids, and averages or a list of your favourite songs and information about them, or a list of all of your friends and how they should be paired for a secret santa.
+*Data* are things like, a list of customers from your store with names, emails, ids, and order history or a list of your favourite songs and information about them, or a list of all of your friends and how they should be paired for a secret santa.
 
-*Flow* is taking that data and doing things like, getting the student ids for the top three students in class, or making a playlist that's exactly 50min for a run, or finding the optimal pairings of people for a secret santa so everyone is happy.
+*Flow* is taking that data and doing things like, getting the customer emails for the three customers who have ordered the most, or making a playlist that's exactly 50min for a run, or finding the optimal pairings of people for a secret santa so everyone is happy.
 
 
 First we'll learn how to structure that data.
@@ -121,18 +121,24 @@ song.playCount = song.playCount + 1;
 So collections variables can group values together, however you may have noticed that collections _themselves_ are values, meaning we can put collections within collections! Let's try replicate our examples from the intro.
 
 ```js
-var students = [
+var customers = [
     {
         id : 12768795,
         name : 'Scott Tolksdorf',
         email : 'scott.tolksdorf@gmail.com',
-        avg : 85.3
+        orders : []
     },
     {
         id : 12748305,
         name : 'Katie McCann',
-        email : 'kt.da.realest@coolgirlz.biz',
-        avg : 97.4
+        email : 'kt.da.realest@coolpeeps.biz',
+        orders : [
+            {
+                date : '10/25/2017',
+                cart : ['Overwatch mug', 'Bird Notebook'],
+                total : 56.47
+            }
+        ]
     }
 ];
 
@@ -213,7 +219,7 @@ What's happening here is that map is looking at each value in the array, eg. `2`
 Map is useful when the result you want is always the same size as the starting list. So it's great if given a list of student information you just want everyone's email, but it wouldn't be useful for getting your favourite songs from a list.
 
 ```js
-var listOfStudents = [
+var listOfcustomers = [
     {
         id : 12768795,
         name : 'Scott Tolksdorf',
@@ -228,19 +234,59 @@ var listOfStudents = [
     }
 ];
 
-var getStudentEmails = (students)=>{
+var getStudentEmails = (customers)=>{
     var getEmailFromStudent = (student)=>{
         return student.email;
     }
-    return students.map(getEmailFromStudent)
+    return customers.map(getEmailFromStudent)
 };
 
-var studentEmails = getStudentEmails(listOfStudents);
+var studentEmails = getStudentEmails(listOfcustomers);
 ```
 
+#### Filter
+Filter is used to create smaller collections based on some logic. Getting only your favourite tracks, or a list of customers over
+
+
 #### Reduce
+This one is a bit harder to get your head around, but it's crazy useful. `reduce` needs a collection, a function, and a starting value.
+
+`reduce` uses something called an `accumulator`, a fancy name for a variable that gets used to collect the result for each function. The `accumulator` gets returned after the `reduce` function finishes. The result of _each ufunction call_ becomes the new `accumulator` for the next function call.
+
+How to use reduce looks like this: `[array].reduce([function], [starting value])`
+
+```js
+var numbers = [1,2,3,4];
+var add = (a, b)=>{
+    return a + b;
+}
+var total = numbers.reduce(add, 0);
+```
+
+```
+   Value   acc  add(value, acc)    new acc
+[
+    1      0      add(1, 0)     -->   1
+    2      1      add(2, 1)     -->   3
+    3      3      add(3, 3)     -->   6
+    4      6      add(4, 6)     -->   10
+]  ---> acc
+
+10
+```
+
+A useful application of `reduce` is filtering through a list, eg. only
 
 
-#### Sort
+
+Each function call will update also iterates over a collection however it will return a single value.
+
+For each value in the collection, reduce will call your function
+
+
+#### Sort and Filter
+
+
+
 
 ### Examples
