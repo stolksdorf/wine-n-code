@@ -19,5 +19,5 @@ const loadBots = ()=>{
 
 Slack.connect(slackBotToken)
 	.then(()=>loadBots())
-	.then(()=>Slack.debug('Wadsworth Rebooted :tada:'))
+	.then(()=>Slack.debug('Wadsworth Rebooted'))
 	.catch((err)=>Slack.error(err));
