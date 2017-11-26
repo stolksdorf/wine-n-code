@@ -1,7 +1,5 @@
 # Slack bots
 
-Wadsworth is
-
 Slack bots communicate with Slack using a "Web Socket", which is kinda like a continous API call that goes in both directions. Wadsworth manages this socket connection for you, so you can just focus on the lgic of your bot.
 
 The API behind Slack is quite large and complex, so I wrote a simple library, called [pico-slack](https://github.com/stolksdorf/pico-slack), that makes it very easy to do common things in Slack; Receive and send messages and emojis.
