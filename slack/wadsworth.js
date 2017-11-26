@@ -3,12 +3,10 @@ const Slack = require('pico-slack');
 
 const slackBotToken = process.env.slack_bot_token || require('./local.json').slack_bot_token;
 
-
 Slack.setInfo('wadsworth', ':tophat:');
 
-
 const loadBots = ()=>{
-	glob.sync('./bots/**/*.bot.js').map((botpath)=>{
+	glob.sync('./bots/**/*.bot.js', {cwd : './slack'}).map((botpath)=>{
 		try {
 			require(botpath);
 			console.log('loaded', botpath);
@@ -21,5 +19,5 @@ const loadBots = ()=>{
 
 Slack.connect(slackBotToken)
 	.then(()=>loadBots())
-	.then(()=>Slack.debug('Rebooted!'))
+	.then(()=>Slack.debug('Wadsworth Rebooted :tada:'))
 	.catch((err)=>Slack.error(err));
