@@ -1,0 +1,20 @@
+{
+  "name": "wine-n-code",
+  "version": "1.0.0",
+  "description": "Wine and Code is a workshop for teaching ladies hw to code",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node slack/wadsworth.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stolksdorf/wine-n-code.git"
+  },
+  "author": "stolksdorf",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stolksdorf/wine-n-code/issues"
+  },
+  "homepage": "https://github.com/stolksdorf/wine-n-code#readme"
+}
