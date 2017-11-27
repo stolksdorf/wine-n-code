@@ -1,3 +1,4 @@
+// Lodash is a library that has a bunch of very useful functions. Kinda like the kitchen sink of functions
 const _ = require('lodash');
 
 //Library that easily lets us make HTTP requests easily
@@ -20,8 +21,9 @@ const getWordArray = (string)=>{
 		.map((word)=>{
 			// converts to lowercase
 			return word.toLowerCase()
-				// removes html tags and punctuation
+				// removes html tags
 				.replace(/<[^>]*>/g, '')
+				// remove puncutation
 				.replace(/\W+/g, '')
 				// removes trailing 's' or 'es'
 				.replace(/s$/, '');
@@ -73,7 +75,10 @@ const TriviaApi = {
 	// Then for each word in the acutal answer, there must be that word in the attmpted answer
 	// If that is true, this function will return true.
 	isCorrect : (question, attemptedAnswer)=>{
-		if(!attemptedAnswer) return false;
+		// If someone sent a blank message, let's not even try parsing it
+		if(!attemptedAnswer){
+			return false;
+		}
 
 		const attemptedWords = getWordArray(attemptedAnswer);
 		const actualWords    = getWordArray(question.answer);

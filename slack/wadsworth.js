@@ -1,7 +1,11 @@
 const glob = require('glob');
 const Slack = require('pico-slack');
 
-const slackBotToken = process.env.slack_bot_token || require('./local.json').slack_bot_token;
+let slackBotToken = process.env.slack_bot_token;
+try{
+	slackBotToken = require('./local.json').slack_bot_token;
+}catch(err){}
+
 
 Slack.setInfo('wadsworth', ':tophat:');
 
