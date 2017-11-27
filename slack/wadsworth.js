@@ -1,8 +1,6 @@
 const glob = require('glob');
 const Slack = require('pico-slack');
 
-console.log(process.env);
-
 let slackBotToken = process.env.slack_bot_token;
 try{
 	slackBotToken = require('./local.json').slack_bot_token;
@@ -27,3 +25,8 @@ Slack.connect(slackBotToken)
 	.then(()=>loadBots())
 	.then(()=>Slack.debug('Wadsworth Rebooted'))
 	.catch((err)=>Slack.error(err));
+
+require('http').createServer((req, res)=>{
+	res.writeHead(200, {'Content-Type': 'text/plain'});
+	res.end();
+}).listen(process.env.PORT || 8000);
