@@ -1,8 +1,10 @@
 const Slack = require('pico-slack');
 
-Slack.onMessage((msg)=>{
+const respond = (msg)=>{
 	if(Slack.msgHas(msg, 'wadsworth', ['hey', 'hello', 'hi', 'yo'])){
-		Slack.log(msg.user, 'just said hello to me!');
-		Slack.send(msg, 'Why hello');
+		Slack.log('This is what the msg object looks like', msg);
+		Slack.send(msg, `Why hello ${msg.user}`);
 	}
-});
+}
+
+Slack.onMessage(respond);
