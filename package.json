@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node slack/wadsworth.js",
-    "dev": "nodemon slack/wadsworth.js"
+    "dev": "nodemon slack/wadsworth.js",
+    "logs": "heroku logs -t --app=slack-winencode"
   },
   "repository": {
     "type": "git",

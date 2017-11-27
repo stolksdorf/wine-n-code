@@ -1,6 +1,8 @@
 const glob = require('glob');
 const Slack = require('pico-slack');
 
+console.log(process.env);
+
 let slackBotToken = process.env.slack_bot_token;
 try{
 	slackBotToken = require('./local.json').slack_bot_token;
