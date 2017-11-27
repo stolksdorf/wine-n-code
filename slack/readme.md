@@ -10,4 +10,4 @@ When Wadsworth loads, he looks in the `/bots` folder for all files named `*.bot.
 
 To make edits to your bot, click the bot file and hit the little pencil icon. Make your edits and hit the commit button at the bottom. It will take about a minute for the server to reboot and load your changes. Watch the `#diagnostics` channel for messages when the server reboots.
 
-*What if my code is bad?!* Don't worry! Wadsworth double checks each bot before he loads, if there are any errors, he won't load it and tell you whats wrong with it in the `diagnostics` channel. If you need any help understanding the messages just let me know :)
+*What if my code is bad?!* Don't worry! Wadsworth double checks each bot before he loads, if there are any errors, he won't load it and tell you whats wrong with it in the `#diagnostics` channel. If you need any help understanding the messages just let me know :)
