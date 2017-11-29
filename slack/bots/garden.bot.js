@@ -5,5 +5,3 @@ Slack.onMessage((msg)=>{
 		Slack.send(msg, 'Ready to garden ${msg.user}?'); 
 	}
 });
-
-Slack.onMessage(respond);
