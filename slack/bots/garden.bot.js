@@ -1,6 +1,8 @@
+//Require in the necessary libraries
 const Slack = require('pico-slack');
 const _ = require('lodash');
 
+//Example test-cases for Vegetable information
 const vegetables = {
 	tomato: {
 		terms: ['tomato', 'tomatoes'],
@@ -53,7 +55,7 @@ const gardenerReady = (msg)=>{
 	if(Slack.msgHas(msg, 'gardenbot')){
 		Slack.log('This is what the msg object looks like', msg);
 		Slack.sendAs('Gardenbot', ':tomato:', msg, `Ready to garden ${msg.user}?`);
-		Slack.sendAs('Gardenbot', ':tomato', msg, getVegetableMessage(whichVegetable(msg.text))); 
+		Slack.sendAs('Gardenbot', ':tomato:', msg, getVegetableMessage(whichVegetable(msg.text))); 
 	}
 };
 
