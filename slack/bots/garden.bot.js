@@ -26,7 +26,7 @@ const vegetables = {
 
 //find and return the object for the requested vegetable
 const whichVegetable = (msg)=>{
-	//Given a vegetable from the vegetables collection, check if the terms match the message text
+	//Given a vegetable from the vegetables collection, check if the terms match the message text and return true or false
 	const rightVegetable = (vegetable)=>{
 		if (Slack.msgHas(msg, vegetable.terms)){
 			return true;
@@ -34,6 +34,7 @@ const whichVegetable = (msg)=>{
 			return false;
 		}
 	};
+	//Iterate through the vegetables object and return the object for the right vegetable
 	return _.find(vegetables, rightVegetable);
 };
 
@@ -51,10 +52,13 @@ const getVegetableMessage = (vegetable)=>{
 	}
 };
 
+//Recieve and send messages to slack
 const gardenerReady = (msg)=>{
 	if(Slack.msgHas(msg, 'gardenbot')){
 		Slack.log('This is what the msg object looks like', msg);
 		Slack.sendAs('Gardenbot', ':tomato:', msg, `Ready to garden ${msg.user}?`);
+		//Send as gardenbot in the channel of the original message
+		//format the vegetable message for the correct vegetable based on the text of the inital message
 		Slack.sendAs('Gardenbot', ':tomato:', msg, getVegetableMessage(whichVegetable(msg.text))); 
 	}
 };
