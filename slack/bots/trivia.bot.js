@@ -92,9 +92,6 @@ Slack.onMessage((msg)=>{
 	if(msg.channel != 'trivia-time'){
 		return;
 	}
-		if(Slack.msgHas(msg, 'give up')){
-		finishPlaying();
-	}
 
 	// If we are playing we want to check the message to see if that's right
 	if(isPlaying){
@@ -102,6 +99,9 @@ Slack.onMessage((msg)=>{
 			// If the answer is right, praise the player, then clean up for another round
 			respondWith.congrats(msg.user);
 			finishPlaying();
+		} else if(Slack.msgHas(msg, 'give up')){
+		finishPlaying();
+
 		}else{
 			// If they are wrong, let them know by reacting to their message with an emoji
 			Slack.react(msg, 'no_entry_sign');
