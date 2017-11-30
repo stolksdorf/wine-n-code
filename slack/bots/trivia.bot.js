@@ -41,6 +41,9 @@ const respondWith = {
 	timesup : ()=>{
 		Slack.send('trivia-time', `Times up! The answer is *${currentQuestion.answer}*`);
 	},
+	gaveup : ()=>{
+		Slack.send('trivia-time', `Oh come now, don't be a quitter! The answer is *${currentQuestion.answer}*`);
+	},
 	congrats : (person)=>{
 		Slack.send('trivia-time', `Congrats ${person}! :tada: You get a gold star :star:`);
 	}
@@ -100,7 +103,7 @@ Slack.onMessage((msg)=>{
 			respondWith.congrats(msg.user);
 			finishPlaying();
 		} else if(Slack.msgHas(msg, 'give up')){
-		respondWith.timesup();
+		respondWith.gaveup();
 			finishPlaying();
 			
 
