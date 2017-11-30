@@ -5,6 +5,6 @@ const respond = (msg)=>{
 		Slack.log('This is what the msg object looks like', msg);
 		Slack.sendAs('Catbot', ':smirk_cat:', `Meow meow ${msg.user}`);
 	}
-}
+};
 
 Slack.onMessage(respond);
