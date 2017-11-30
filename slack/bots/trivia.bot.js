@@ -55,7 +55,7 @@ const beginPlaying = ()=>{
 			// Update our state variables, kick off the timer, and message the channel
 			currentQuestion = question;
 			isPlaying = true;
-			startTimer();
+			//startTimer();
 			respondWith.question();
 		})
 		// If there's an error for whatever reason, log it to the diagnostics channel for debugging
@@ -102,6 +102,10 @@ Slack.onMessage((msg)=>{
 			// If they are wrong, let them know by reacting to their message with an emoji
 			Slack.react(msg, 'no_entry_sign');
 		}
+	}
+	
+	if(Slack.msgHas(msg, 'give up')){
+		finishPlaying();
 	}
 
 	// If the message is actually a trivia request, let's play!
