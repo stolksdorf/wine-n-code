@@ -6,7 +6,10 @@ const facts = [
 	'Cats conserve energy by sleeping an average of 13 to 14 hours a day. Jealous?',
 	'Cats have over 20 muscles that control their ears. So I can hear ALL the shit you talk about me.',
 	'Cats can recognize the sound of your voice but just acts too cool to care. Because we are.',
-	'A house cat is faster than Usain Bolt. Wheres my medal though?' 
+	'A house cat is faster than Usain Bolt. Wheres my medal though?',
+	'Cat owners are 17% more likely to have a graduate degree. The thinking mans pet',
+	'A group of cats is called a clowder. Ugh, so undignified.',
+	'About 50% of a cats kills are purely for entertainment purposes. So you better watch yourself.'
 ]
 
 const getFact = ()=>{
