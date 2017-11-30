@@ -84,6 +84,9 @@ const finishPlaying = ()=>{
 	clearTimeout(timer);
 };
 
+	if(Slack.msgHas(msg, 'give up')){
+		finishPlaying();
+	}
 
 Slack.onMessage((msg)=>{
 	// If the message was not in the trivia-time channel, we don't care about it.
@@ -104,9 +107,6 @@ Slack.onMessage((msg)=>{
 		}
 	}
 	
-	if(Slack.msgHas(msg, 'give up')){
-		finishPlaying();
-	}
 
 	// If the message is actually a trivia request, let's play!
 	if(isTriviaRequest(msg)){
