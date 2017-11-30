@@ -49,10 +49,6 @@ const getVegetableMessage = (vegetable)=>{
 	}
 };
 
-console.log('tomato', whichVegetable('yo baby i love tomato'))
-console.log('garlic', whichVegetable('fuck garlic'))
-console.log(getVegetableMessage(vegetables.garlic))
-
 const gardenerReady = (msg)=>{
 	if(Slack.msgHas(msg, 'gardenbot')){
 		Slack.log('This is what the msg object looks like', msg);
