@@ -2,7 +2,11 @@ const Slack = require('pico-slack');
 const _ = require('lodash');
 
 const facts = [
-	'Did you know cats whiskers are around as wide as a cats body which helps them to sense whether a space will be wide enough for them to squeeze through? Gotta watch out for my lovely lady lumps.', 'Cats conserve energy by sleeping an average of 13 to 14 hours a day. Jealous?', 'Cats have over 20 muscles that control their ears. So I can hear ALL the shit you talk about me.', 'Cats can recognize the sound of your voice but just acts too cool to care. Because we are.', 'A house cat is faster than Usain Bolt. Wheres my medal though?' 
+	'Did you know cats whiskers are around as wide as a cats body which helps them to sense whether a space will be wide enough for them to squeeze through? Gotta watch out for my lovely lady lumps.',
+	'Cats conserve energy by sleeping an average of 13 to 14 hours a day. Jealous?',
+	'Cats have over 20 muscles that control their ears. So I can hear ALL the shit you talk about me.',
+	'Cats can recognize the sound of your voice but just acts too cool to care. Because we are.',
+	'A house cat is faster than Usain Bolt. Wheres my medal though?' 
 ]
 
 const getFact = ()=>{
