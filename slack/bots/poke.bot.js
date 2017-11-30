@@ -7,4 +7,4 @@ Slack.onMessage((msg)=>{
   Slack.react(msg,'beers');
   }
 
-}
+});
