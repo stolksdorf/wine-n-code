@@ -101,6 +101,7 @@ Slack.onMessage((msg)=>{
 			finishPlaying();
 		} else if(Slack.msgHas(msg, 'give up')){
 		finishPlaying();
+			respondWith.timesup();
 
 		}else{
 			// If they are wrong, let them know by reacting to their message with an emoji
