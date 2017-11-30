@@ -84,15 +84,16 @@ const finishPlaying = ()=>{
 	clearTimeout(timer);
 };
 
-	if(Slack.msgHas(msg, 'give up')){
-		finishPlaying();
-	}
+
 
 Slack.onMessage((msg)=>{
 	// If the message was not in the trivia-time channel, we don't care about it.
 	// End the function early
 	if(msg.channel != 'trivia-time'){
 		return;
+	}
+		if(Slack.msgHas(msg, 'give up')){
+		finishPlaying();
 	}
 
 	// If we are playing we want to check the message to see if that's right
