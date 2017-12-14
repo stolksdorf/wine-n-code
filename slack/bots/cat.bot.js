@@ -1,6 +1,6 @@
 const Slack = require('pico-slack');
 const _ = require('lodash');
-const catEmojis = ['cat', 'cat2', 'smiley_cat', 'joy_cat', 'heart_eyes_cat', 'smile_cat'];
+const catEmojis = ['cat', 'cat2', 'smiley_cat', 'joy_cat', 'smile_cat'];
 
 
 const facts = [
@@ -19,7 +19,7 @@ const getFact = ()=>{
 }
 
 const respond = (msg)=>{
-	if(Slack.msgHas(msg, 'catbot', ['hey', 'hello', 'hi', 'yo', 'meow', 'bonjour', 'whats up'])){
+	if(Slack.msgHas(msg, 'catbot')){
 		//Slack.log('This is what the msg object looks like', msg);
 		Slack.sendAs('Catbot', ':smirk_cat:', msg, getFact());
 		Slack.react(msg, _.sample(catEmojis));
